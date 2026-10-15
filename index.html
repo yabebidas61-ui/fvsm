@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para Dani</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap">
+<style>
+:root{--bg1:#ffe9ef;--bg2:#e9e1ff;--ink:#4a2f4f;--muted:#7a6380;--accent:#d9487d;--card:rgba(255,255,255,.65);--bd:rgba(217,72,125,.18);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1635;--bg2:#141a3d;--ink:#fbeaf2;--muted:#c9b3d6;--accent:#ff9cc2;--card:rgba(255,255,255,.07);--bd:rgba(255,156,194,.22)}}
+:root[data-theme="dark"]{--bg1:#2a1635;--bg2:#141a3d;--ink:#fbeaf2;--muted:#c9b3d6;--accent:#ff9cc2;--card:rgba(255,255,255,.07);--bd:rgba(255,156,194,.22)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;overflow-x:hidden}
+section{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:64px 22px;max-width:860px;margin:auto;position:relative;z-index:2}
+.script{font-family:'Dancing Script',cursive,Georgia,serif;color:var(--accent);font-size:clamp(1.6rem,5vw,2.2rem)}
+h1{font-weight:400;font-size:clamp(2.2rem,8vw,4.2rem);line-height:1.15;margin:.3em 0}
+h1 em,h2 em{color:var(--accent)}
+h2{font-weight:400;font-size:clamp(1.8rem,6vw,2.8rem);margin:.3em 0 1em}
+p{font-size:1.3rem;line-height:1.6;color:var(--muted);max-width:520px;margin:.5em auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;width:100%}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:28px 22px;backdrop-filter:blur(6px)}
+.card .ic{font-size:1.8rem}
+.card h3{font-weight:400;font-size:1.5rem;margin:.4em 0}
+.card p{font-size:1.15rem;margin:0}
+.rv{opacity:0;transform:translateY(26px);transition:all 1s ease}
+.rv.on{opacity:1;transform:none}
+.hint{margin-top:34px;color:var(--muted);font-size:1rem;animation:b 2s infinite}
+@keyframes b{50%{transform:translateY(8px)}}
+button{font:inherit;font-size:1.2rem;cursor:pointer;border:none;border-radius:999px;padding:14px 32px;background:var(--accent);color:#fff;box-shadow:0 8px 24px rgba(217,72,125,.3);transition:.25s}
+button:hover{transform:translateY(-2px) scale(1.03)}
+#note{min-height:110px;display:flex;align-items:center;justify-content:center;font-size:clamp(1.5rem,5vw,2.2rem);font-style:italic;max-width:600px;margin:10px auto 24px;transition:opacity .5s}
+.heart{font-size:5rem;cursor:pointer;display:inline-block;animation:pulse 1.8s infinite;user-select:none;margin:14px}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.fl{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.fl span{position:absolute;bottom:-40px;opacity:.7;animation:up linear infinite}
+@keyframes up{to{transform:translateY(-115vh) rotate(40deg);opacity:0}}
+.burst{z-index:9}
+</style>
+</head>
+<body>
+<div class="fl" id="fl"></div>
+
+<section>
+  <div class="script" id="to">Para Dani 💗</div>
+  <h1>Hoy solo quería<br>recordarte algo <em>bonito</em></h1>
+  <p>Sin ningún motivo especial. Solo porque mereces sonreír.</p>
+  <div class="hint">desliza ↓</div>
+</section>
+
+<section>
+  <div class="script rv">Tres cosas que quería que supieras</div>
+  <h2 class="rv">Y que ojalá nunca olvides</h2>
+  <div class="grid">
+    <div class="card rv"><div class="ic">🌷</div><h3>Tu sonrisa cambia el día</h3><p>Hay personas que iluminan sin darse cuenta. Tú eres una de ellas.</p></div>
+    <div class="card rv"><div class="ic">✨</div><h3>Vas a lograr lo que te propongas</h3><p>Tienes talento, constancia y un corazón enorme. Confía en ti, que yo ya lo hago.</p></div>
+    <div class="card rv"><div class="ic">🌙</div><h3>Mereces cosas hermosas</h3><p>Que nada ni nadie te haga dudar de lo valiosa que eres.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="script rv">Para cuando lo necesites</div>
+  <h2 class="rv">Un mensajito <em>solo para ti</em></h2>
+  <div id="note" class="rv">Toca el botón 💌</div>
+  <button class="rv" id="nx">Abrir un mensaje</button>
+</section>
+
+<section>
+  <div class="script rv">Gracias, Dani</div>
+  <h1 class="rv">Por ser <em>como eres</em></h1>
+  <p class="rv">Sin preguntas y sin presiones. Solo quería que supieras que alguien piensa en ti con mucho cariño y te desea lo mejor, siempre.</p>
+  <div class="heart rv" id="hr" title="Tócame">💗</div>
+  <p class="rv" style="font-size:1rem">(toca el corazón)</p>
+</section>
+
+<script>
+// Para poner su nombre: agrega ?nombre=Ana al final del link.
+var N=new URLSearchParams(location.search).get('nombre');
+if(N)document.getElementById('to').textContent='Para ti, '+N;
+
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.2});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3)*.12+'s';io.observe(el)});
+
+var f=document.getElementById('fl'),E=['🌸','✨','💗','🤍'];
+for(var i=0;i<16;i++){var s=document.createElement('span');s.textContent=E[i%4];
+ s.style.left=Math.random()*100+'%';s.style.fontSize=(12+Math.random()*16)+'px';
+ s.style.animationDuration=(12+Math.random()*12)+'s';s.style.animationDelay=(-Math.random()*20)+'s';f.appendChild(s)}
+
+var M=['Respira. Lo estás haciendo mejor de lo que crees.',
+'Eres de esas personas que hacen más bonito el mundo solo por existir.',
+'Hoy brilla, aunque no lo notes. Yo sí lo noto.',
+'Los días difíciles también pasan, y tú eres más fuerte que todos ellos.',
+'Ojalá nunca olvides lo increíble que eres.',
+'Tus sueños no son demasiado grandes. Tú puedes con ellos.',
+'Que hoy te abrace algo bonito, como mereces.'],k=0,nt=document.getElementById('note');
+document.getElementById('nx').onclick=function(){nt.style.opacity=0;this.textContent='Otro mensaje';
+ setTimeout(function(){nt.textContent=M[k%M.length];k++;nt.style.opacity=1},400)};
+
+document.getElementById('hr').onclick=function(e){
+ for(var i=0;i<18;i++){var s=document.createElement('span');s.textContent=['💗','🌸','✨'][i%3];
+ s.style.cssText='position:fixed;pointer-events:none;z-index:9;transition:all 1.6s ease-out;opacity:1;font-size:'+(18+Math.random()*16)+'px;left:'+e.clientX+'px;top:'+e.clientY+'px';
+ document.body.appendChild(s);
+ (function(x){setTimeout(function(){x.style.transform='translate('+((Math.random()-.5)*300)+'px,'+(-80-Math.random()*220)+'px)';x.style.opacity=0},20);setTimeout(function(){x.remove()},1800)})(s)}};
+</script>
+</body>
+</html>
